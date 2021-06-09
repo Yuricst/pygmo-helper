@@ -71,8 +71,10 @@ class Rosenbrock:
 
 
 ## Using pygmo with SNOPT
-#### Windows
-To use SNOPT7 as the algorithm, provide the path to the `snopt7.dll` file. 
+Using SNOPT7 requires `pygmo_plugins_nonfree` to be installed as well; see [official pygmo docs using on SNOPT](https://esa.github.io/pagmo_plugins_nonfree/py_snopt7.html). 
+
+### Windows
+On Windows, provide the path to the `snopt7.dll` file. 
 
 ```python
 import pygmo_plugins_nonfree as ppnf
