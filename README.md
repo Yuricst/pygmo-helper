@@ -12,8 +12,8 @@ import pygmo as pg
 
 class MyUDP:
     def __init__(self, lb, ub):
-				self.lb = lb
-				self.ub = ub
+        self.lb = lb
+        self.ub = ub
 
     def fitness(self, x):
         # compute fitness 
@@ -80,7 +80,13 @@ path_to_snopt7 = "C:\path\to\snopt7.dll"
 pygmoSnopt = ppnf.snopt7(screen_output=False, library=path_to_snopt7,  minor_version=7)
 ```
 
-Optionally, add to system environment variables `C:\path\to\snopt7.dll` as `SNOPT_DLL`, then this may be accessed in Python as 
+Optionally, add to system environment variables `C:\path\to\snopt7.dll` as `SNOPT_DLL`:
+
+1. From Start, search "Edit environment variables for your account" and open
+2. Go to Environment Variables
+3. Under "User Variables", click on New, and add entries for "SNOPT_LICENSE" (must) & "SNOPT_DLL" (optional)
+
+Then, this may be accessed in Python as 
 
 ```python
 import os
