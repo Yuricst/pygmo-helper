@@ -53,7 +53,6 @@ def main():
 
     # use snopt
     pygmoSnopt = ppnf.snopt7(screen_output=False, library=path_to_snopt7,  minor_version=7)
-    ### see https://esa.github.io/pagmo_plugins_nonfree/py_snopt7.html
     pygmoSnopt.set_numeric_option('Major feasibility tolerance', 1e-6)
     pygmoSnopt.set_numeric_option('Minor feasibility tolerance', 1e-6)
     pygmoSnopt.set_numeric_option('Major optimality tolerance', 1e-6)
