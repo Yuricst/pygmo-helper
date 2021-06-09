@@ -28,11 +28,11 @@ class MyUDP:
     def get_nic(self):
         return 2
 
-	  # Lower and Upper bounds on x
+    # Lower and Upper bounds on x
     def get_bounds(self):
         return (self.lb, self.ub)
 		
-		# provide gradients
+    # provide gradients
     def gradient(self, x):
         return pg.estimate_gradient_h(lambda x: self.fitness(x), x)
 ```
