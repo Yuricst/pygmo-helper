@@ -3,6 +3,7 @@ Test pygmo & snopt
 """
 
 import os
+from sys import platform
 import numpy as np
 from numba import jit, float64
 import pygmo as pg
@@ -10,8 +11,19 @@ import pygmo_plugins_nonfree as ppnf
 
 
 # PATH TO SNOPT LIBRARY --------------------------------- #
-# On Windows: provide path to snopt7.dll as environment variable 'SNOPT_DLL'
-path_to_snopt7 = os.getenv('SNOPT_DLL')
+if platform == "linux" or platform == "linux2":
+    # linux
+    # provide path to snopt7.so as environment variable 'SNOPT_SO'
+    path_to_snopt7 = os.getenv('SNOPT_SO')
+
+elif platform == "darwin":
+    # OS X
+    print("Not yet worked on...")
+
+elif platform == "win32":
+    # Windows...
+	# provide path to snopt7.dll as environment variable 'SNOPT_DLL'
+	path_to_snopt7 = os.getenv('SNOPT_DLL')
 print(f"Using path to snopt7: {path_to_snopt7}")
 # ------------------------------------------------------- #
 
