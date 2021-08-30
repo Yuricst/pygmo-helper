@@ -3,6 +3,14 @@ Helper functions for [pygmo](https://esa.github.io/pygmo2/index.html)
 
 Requirements: pygmo, pygmo_plugins_nonfree
 
+Installation via conda requires channel configurations:
+
+```shell
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install pygmo
+```
+
 ## Generic problem template
 
 The generic shape of a pygmo UDP (user-defined problem) is as follows:
