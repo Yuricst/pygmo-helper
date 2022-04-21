@@ -23,7 +23,7 @@ elif platform == "darwin":
 elif platform == "win32":
     # Windows...
 	# provide path to snopt7.dll as environment variable 'SNOPT_DLL'
-	path_to_snopt7 = os.getenv('SNOPT_DLL')
+	path_to_snopt7 = r"C:\Users\yshimane3\Documents\snopt\libsnopt7\snopt7.dll" #os.getenv('SNOPT_DLL')
 print(f"Using path to snopt7: {path_to_snopt7}")
 # ------------------------------------------------------- #
 
@@ -73,7 +73,7 @@ def main():
 
     # # pure SNOPT
     algo = pg.algorithm(pygmoSnopt)
-    algo.set_verbosity(2)
+    algo.set_verbosity(1)
     print(algo)
 
     # solve
