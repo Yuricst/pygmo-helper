@@ -3,6 +3,14 @@ Helper functions for [pygmo](https://esa.github.io/pygmo2/index.html)
 
 Requirements: pygmo, pygmo_plugins_nonfree
 
+Installation via conda requires channel configurations:
+
+```shell
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install pygmo
+```
+
 ## Generic problem template
 
 The generic shape of a pygmo UDP (user-defined problem) is as follows:
@@ -72,6 +80,17 @@ class Rosenbrock:
 
 ## Using pygmo with SNOPT
 Using SNOPT7 requires `pygmo_plugins_nonfree` to be installed as well; see [official pygmo docs using on SNOPT](https://esa.github.io/pagmo_plugins_nonfree/py_snopt7.html). 
+
+### Linux
+
+The files to be downloaded are the **Fortran/C Libraries** (not C++). 
+Then, provide path to 
+
+```
+export SNOPT_LICENSE=/home/path/to/snopt7.lic
+export LD_LIBRARY_PATH=$HOME/path/to/libsnopt7
+export SNOPT_SO=$HOME/path/to/libsnopt7/libsnopt7.so
+```
 
 ### Windows
 On Windows, provide the path to the `snopt7.dll` file. 
