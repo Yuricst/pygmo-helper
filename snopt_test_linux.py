@@ -2,6 +2,9 @@
 Run snopt on linux via pygmo and ppnf
 Make sure the user environment variable `SNOPT_LICENSE` points to `snopt7.lic`. 
 The `library` input in `ppnf.snopt7()` should point to the `libsnopt7.so` file. 
+python 3.8.12
+Pygmo: version 2.16.1
+ppng: version 0.22
 """
 
 import os
