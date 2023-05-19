@@ -88,8 +88,8 @@ Then, provide path to
 
 ```
 export SNOPT_LICENSE=/home/path/to/snopt7.lic
-export LD_LIBRARY_PATH=$HOME/path/to/libsnopt7
-export SNOPT_SO=$HOME/path/to/libsnopt7/libsnopt7.so
+export LD_LIBRARY_PATH=$HOME/path/to/libsnopt7   # ONLY FOR WINDOWS
+export SNOPT_SO=$HOME/path/to/libsnopt7/libsnopt7.so   # optional but useful
 ```
 
 ### Windows
@@ -98,7 +98,7 @@ On Windows, provide the path to the `snopt7.dll` file.
 ```python
 import pygmo_plugins_nonfree as ppnf
 path_to_snopt7 = "C:\path\to\snopt7.dll"
-pygmoSnopt = ppnf.snopt7(screen_output=False, library=path_to_snopt7,  minor_version=7)
+pygmoSnopt = ppnf.snopt7(screen_output=False, library=path_to_snopt7,  minor_version=7)  # MAKE SURE MINOR_VERSION IS CORRECT
 ```
 
 Optionally, add to system environment variables `C:\path\to\snopt7.dll` as `SNOPT_DLL`:
@@ -113,3 +113,7 @@ Then, this may be accessed in Python as
 import os
 path_to_snopt7 = os.getenv('SNOPT_DLL')
 ```
+
+### Common issues
+
+- If the `minor_version` is not correct, a segmentation fault is thrown!!
