@@ -101,7 +101,7 @@ path_to_snopt7 = "C:\path\to\snopt7.dll"
 pygmoSnopt = ppnf.snopt7(screen_output=False, library=path_to_snopt7,  minor_version=7)  # MAKE SURE MINOR_VERSION IS CORRECT
 ```
 
-**Note: SNOPT7 has its own gradient estimator which is better than `pg.estimate_gradient_h(lambda x: self.fitness(x), x)`, so we can choose to not implement the `self.gradient()` method in the UDP.
+**Note: SNOPT7 has its own gradient estimator which is better than `pg.estimate_gradient_h(lambda x: self.fitness(x), x)`, so we can choose to not implement the `self.gradient()` method in the UDP.**
 
 Optionally, add to system environment variables `C:\path\to\snopt7.dll` as `SNOPT_DLL`:
 
