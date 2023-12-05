@@ -24,9 +24,16 @@ class MyUDP:
         self.ub = ub
 
     def fitness(self, x):
+	"""Compute fitness for given decision vector x
+
+	Args:
+	    x (np.array-like): decision vector
+	"""
         # compute fitness 
         # in order: objective, equality constraints, inequality constraints
-        return [obj, ceqs, cineqs]
+	ceqs = [x[1]**3 - 5, ]
+	cineqs = [x[0]**2 - 2x[1], ]
+        return [obj,] + ceqs + cineqs
     
     # Number of equality Constraints
     def get_nec(self):
