@@ -32,7 +32,7 @@ class MyUDP:
         # compute fitness 
         # in order: objective, equality constraints, inequality constraints
 	ceqs = [x[1]**3 - 5, ]
-	cineqs = [x[0]**2 - 2x[1], ]
+	cineqs = [x[0]**2 - 2*x[1], ]
         return [obj,] + ceqs + cineqs
     
     # Number of equality Constraints
